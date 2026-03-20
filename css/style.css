@@ -471,6 +471,8 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
   background-color: #1d1f21;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
