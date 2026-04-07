@@ -606,6 +606,7 @@ body {
   }
 }
 .external-card {
+  display: block;
   margin-top: 1.5rem;
   padding: 1rem 1.1rem;
   border: 1px solid #908d8d;
@@ -619,6 +620,7 @@ body {
   background: none;
 }
 .external-card__eyebrow {
+  display: block;
   margin-bottom: 0.45rem;
   color: #2bbc8a;
   font-size: 0.82rem;
@@ -634,9 +636,24 @@ body {
   line-height: 1.45;
 }
 .external-card__desc {
+  display: block;
   margin: 0;
   color: #c9cacc;
   opacity: 0.78;
+}
+.external-card--link {
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.external-card--link:hover {
+  border-color: rgba(43,188,138,0.55);
+  background: rgba(43,188,138,0.08);
+  transform: translateY(-1px);
+}
+.external-card--link .external-card__title {
+  background: none;
+}
+.download-card {
+  border-color: rgba(43,188,138,0.35);
 }
 .xhs-card {
   border-color: rgba(43,188,138,0.35);
