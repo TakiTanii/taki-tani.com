@@ -725,8 +725,8 @@ body {
   content: "";
   position: absolute;
   top: 0;
-  left: 6px;
-  right: 6px;
+  left: 12px;
+  right: 12px;
   border-top: 1px solid rgba(144,141,141,0.7);
 }
 .arknights-card__link:hover,
