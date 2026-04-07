@@ -658,6 +658,95 @@ body {
 .xhs-card {
   border-color: rgba(43,188,138,0.35);
 }
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 4px 10px;
+  border: 1px solid rgba(43,188,138,0.45);
+  border-radius: 6px;
+  color: #c9cacc;
+  font-size: 12px;
+  line-height: 1.2;
+  text-decoration: none;
+  background: transparent;
+  background-image: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.download-btn:hover,
+.download-btn:focus {
+  color: #c9cacc;
+  text-decoration: none;
+  background: rgba(43,188,138,0.08);
+  background-image: none;
+  border-color: rgba(43,188,138,0.7);
+  transform: translateY(-1px);
+}
+.arknights-card {
+  display: block;
+  margin-top: 1.5rem;
+  border: 1px solid rgba(43,188,138,0.45);
+  border-radius: 10px;
+  background: rgba(43,188,138,0.04);
+  overflow: hidden;
+}
+.arknights-card__title {
+  display: block;
+  padding: 0.9rem 1rem;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-decoration: none;
+  background: none;
+  background-image: none;
+}
+.arknights-card__title:hover,
+.arknights-card__title:focus {
+  color: #2bbc8a;
+  text-decoration: none;
+  background: none;
+  background-image: none;
+}
+.arknights-card__link {
+  position: relative;
+  display: block;
+  padding: 0.26rem 1rem;
+  color: #2bbc8a;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  background-image: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.arknights-card__link:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 6px;
+  right: 6px;
+  border-top: 1px solid rgba(144,141,141,0.7);
+}
+.arknights-card__link:hover,
+.arknights-card__link:focus {
+  color: #2bbc8a;
+  text-decoration: none;
+  background: none;
+  background-image: none;
+}
+.content .arknights-card__title:hover,
+.content .arknights-card__title:focus,
+.content .arknights-card__link:hover,
+.content .arknights-card__link:focus {
+  background-image: none;
+}
+.content .arknights-card__title,
+.content .arknights-card__link {
+  background-image: none;
+  text-decoration: none;
+}
 #header {
   margin: 0 auto 2rem;
   position: relative;

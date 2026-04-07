@@ -1,4 +1,7 @@
-Place public download files in this folder.
+Do not commit large binary files into this repository.
 
-After Hexo generates the site, a file here can be downloaded from:
-https://www.taki-tani.com/downloads/files/<your-file-name>
+Use GitHub Releases for downloadable assets instead:
+https://github.com/TakiTanii/blog_src/releases
+
+Preferred direct link format in posts/pages:
+https://github.com/TakiTanii/blog_src/releases/latest/download/<your-file-name>
