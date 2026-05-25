@@ -1,128 +1,101 @@
-<!DOCTYPE html>
-<html lang=en>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Taki Tani&#39;s personal website and blog.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Taki Tani">
-<meta property="og:url" content="https://www.taki-tani.com/404.html">
-<meta property="og:site_name" content="Taki Tani">
-<meta property="og:description" content="Taki Tani&#39;s personal website and blog.">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Taki Tani">
-<meta property="article:tag" content="Taki Tani">
-<meta property="article:tag" content="blog">
-<meta property="article:tag" content="notes">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/site-favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/site-favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/site-apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Taki Tani</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
+<!DOCTYPE html><html lang="en" class="!overflow-x-hidden"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="generator" content="Astro v6.3.7"><link rel="sitemap" href="/sitemap-index.xml"><!-- Font preloads --><link rel="preload" href="/fonts/VCRosdNEUE.ttf" as="font" type="font/ttf" crossorigin><!-- Canonical URL --><link rel="canonical" href="https://www.taki-tani.com/404/"><!-- Primary Meta Tags --><title>404 | Taki Tani</title><meta name="title" content="404 | Taki Tani"><meta name="description" content="Taki Tani's personal website and blog."><meta name="robots" content="noindex, nofollow"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://www.taki-tani.com/404/"><meta property="og:title" content="404 | Taki Tani"><meta property="og:description" content="Taki Tani's personal website and blog."><!-- Twitter --><meta property="twitter:card" content="summary"><meta property="twitter:url" content="https://www.taki-tani.com/404/"><meta property="twitter:title" content="404 | Taki Tani"><meta property="twitter:description" content="Taki Tani's personal website and blog."><!-- View Transitions  --><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CAqDO0tx.js"></script><link rel="stylesheet" href="/_astro/Layout.6oHWFsom.css"></head> <body class="site-page bg-black text-white tracking-wide !overflow-x-hidden flex flex-col">  <main class="pt-0 flex-1">  <section class="not-found-page w-full grid place-items-center px-4" id="not-found"> <div id="error-terminal" data-terminal-config="{&quot;initialLead&quot;:&quot;error&quot;,&quot;initialTitle&quot;:&quot;404&quot;,&quot;scenes&quot;:[{&quot;id&quot;:&quot;code&quot;,&quot;lead&quot;:&quot;error&quot;,&quot;title&quot;:&quot;404&quot;},{&quot;id&quot;:&quot;face&quot;,&quot;lead&quot;:&quot;error&quot;,&quot;title&quot;:&quot;:-(&quot;}]}" class="text-center"> <p class="hero-module opacity-95" aria-hidden="true"> <span class="hero-type-frame"> <span class="hero-type-measure">error</span> <span class="hero-type-live"> <span data-terminal-lead>error</span><span class="hero-terminal-cursor" data-terminal-lead-cursor></span> </span> </span> </p> <h1 class="hero-title font-bold"> <span class="sr-only">Error 404</span> <span class="hero-type-frame" aria-hidden="true"> <span class="hero-type-measure">404</span> <span class="hero-type-live"> <span data-terminal-title>404</span><span class="hero-terminal-cursor" data-terminal-title-cursor></span> </span> </span> </h1> </div> <script data-astro-rerun>
+  (() => {
+    const terminals = document.querySelectorAll(
+      "[data-terminal-config]:not([data-terminal-bound])",
+    );
 
+    terminals.forEach((terminal) => {
+      terminal.setAttribute("data-terminal-bound", "true");
+      const config = JSON.parse(terminal.getAttribute("data-terminal-config"));
+      const leadOutput = terminal.querySelector("[data-terminal-lead]");
+      const titleOutput = terminal.querySelector("[data-terminal-title]");
+      const leadCursor = terminal.querySelector("[data-terminal-lead-cursor]");
+      const titleCursor = terminal.querySelector(
+        "[data-terminal-title-cursor]",
+      );
+      if (!leadOutput || !titleOutput || !leadCursor || !titleCursor) return;
 
-    <!-- Umami Analytics -->
+      const sleep = (time) =>
+        new Promise((resolve) => setTimeout(resolve, time));
+      const holdTime = () => 4000 + Math.floor(Math.random() * 2001);
+      const setCursor = (activeCursor) => {
+        leadCursor.classList.toggle("is-active", activeCursor === leadCursor);
+        titleCursor.classList.toggle("is-active", activeCursor === titleCursor);
+      };
+      const type = async (node, value) => {
+        for (const character of value) {
+          if (!terminal.isConnected) return false;
+          node.textContent += character;
+          await sleep(90);
+        }
+        return true;
+      };
+      const erase = async (node) => {
+        while (node.textContent.length > 0) {
+          if (!terminal.isConnected) return false;
+          node.textContent = node.textContent.slice(0, -1);
+          await sleep(55);
+        }
+        return true;
+      };
+      const replaceTitle = async (value) => {
+        setCursor(titleCursor);
+        if (!(await erase(titleOutput))) return false;
+        return type(titleOutput, value);
+      };
+      const replacePair = async (scene) => {
+        setCursor(titleCursor);
+        if (!(await erase(titleOutput))) return false;
+        if (leadOutput.textContent !== scene.lead) {
+          setCursor(leadCursor);
+          if (!(await erase(leadOutput))) return false;
+          if (!(await type(leadOutput, scene.lead))) return false;
+          await sleep(180);
+        }
+        setCursor(titleCursor);
+        return type(titleOutput, scene.title);
+      };
 
+      const runSequence = async () => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          leadOutput.textContent = config.initialLead;
+          titleOutput.textContent = config.initialTitle;
+          setCursor(titleCursor);
+          return;
+        }
 
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
+        leadOutput.textContent = "";
+        titleOutput.textContent = "";
+        setCursor(leadCursor);
+        if (!(await type(leadOutput, config.initialLead))) return;
+        await sleep(180);
+        setCursor(titleCursor);
+        if (!(await type(titleOutput, config.initialTitle))) return;
 
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 8.1.1"></head>
+        let currentScene =
+          config.scenes.find(
+            (scene) =>
+              scene.lead === config.initialLead &&
+              scene.title === config.initialTitle,
+          )?.id ?? "";
 
-<body class="max-width mx-auto px3 ltr">
-    <div class="content index py4 ">
-        <header id="header">
-  <a class="u-url u-uid" id="home-link" href="/">
-    
-  
-    <img id="logo" alt class="u-logo" src="/images/logo.png" />
-  
+        while (terminal.isConnected) {
+          await sleep(holdTime());
+          const options = config.scenes.filter(
+            (scene) => scene.id !== currentScene,
+          );
+          const nextScene = options[Math.floor(Math.random() * options.length)];
+          if (!nextScene || !(await replacePair(nextScene))) return;
+          currentScene = nextScene.id;
 
+          if (nextScene.followupTitle) {
+            await sleep(nextScene.followupDelay ?? 2000);
+            if (!(await replaceTitle(nextScene.followupTitle))) return;
+          }
+        }
+      };
 
-  </a>
-  <div id="title">
-    <h1 class="p-name">Taki Tani</h1>
-  </div>
-</header>
-
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    
-
-    <div class="content" itemprop="articleBody">
-        
-            <h1>404 Page Not Found</h1>
-            <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
-        
-    </div>
-</article>
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2025-2035
-    Taki Tani
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
-
-
-
-<!-- clipboard -->
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Disqus Comments -->
-
-<!-- utterances Comments -->
-
-</body>
-</html>
+      runSequence();
+    });
+  })();
+</script> </section>  </main>  </body></html>
